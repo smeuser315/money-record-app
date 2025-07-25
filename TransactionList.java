@@ -33,7 +33,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 public class TransactionList extends AppCompatActivity implements TransactionAdapter.TransactionListener{
 
-    private RecyclerView recordRecyclerView;
+    private ListView recordListView;
     private SearchView mainRecordSearchView;
     private TextView recordTitleTV, recordBackTV;
 
@@ -58,9 +58,9 @@ public class TransactionList extends AppCompatActivity implements TransactionAda
         moreIV.setVisibility(View.GONE);
 
 
-        recordRecyclerView = findViewById(R.id.recordMainRV);
-        recordRecyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
-        recordRecyclerView.setLayoutManager(new LinearLayoutManager(TransactionList.this));
+        recordListView = findViewById(R.id.recordMainRV);
+        recordListView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
+        recordListView.setLayoutManager(new LinearLayoutManager(TransactionList.this));
 
 
         mainRecordSearchView = findViewById(R.id.recordABMainSV);
@@ -222,7 +222,7 @@ public class TransactionList extends AppCompatActivity implements TransactionAda
                     nullNotice.setVisibility(View.VISIBLE);
                 }else{
                     transactionAdapter = new TransactionAdapter(TransactionList.this, task.getResult().toObjects(TransactionModel.class), getIntent().getStringExtra("network"), userType);
-                    recordRecyclerView.setAdapter(transactionAdapter);
+                    recordListView.setAdapter(transactionAdapter);
                 }
 
             }
@@ -252,7 +252,7 @@ public class TransactionList extends AppCompatActivity implements TransactionAda
                 });
         initRecyclerView();
 
-        Snackbar.make(recordRecyclerView, "Item deleted", Snackbar.LENGTH_LONG)
+        Snackbar.make(recordListView, "Item deleted", Snackbar.LENGTH_LONG)
                 .setAction("Undo", new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
