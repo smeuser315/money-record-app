@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/transCL"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+
+
+        <TextView
+            android:id="@+id/transactionAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:clickable="false"
+            android:fontFamily="@font/opensans_semibold"
+            android:text="GHS1068.20"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/actualTransaction"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/actualTransaction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/opensans_semibold"
+            android:text="&#8226; Sending (In &amp; Out)"
+            android:textColor="#008E28"
+            android:textSize="12sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/transTypeDesc"
+            app:layout_constraintStart_toEndOf="@+id/transTypeDesc" />
+
+        <TextView
+            android:id="@+id/transTypeDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/opensans_semibold"
+            android:text="Cash-In"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/phoneNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/opensans_semibold"
+            android:text="0247074091"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/transIV"
+            app:layout_constraintTop_toTopOf="@+id/transIV" />
+
+        <ImageView
+            android:id="@+id/transIV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/mtn_circle_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/transTypeDesc"
+            app:layout_constraintTop_toBottomOf="@+id/transTypeDesc" />
+
+        <TextView
+            android:id="@+id/transDateTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/opensans_regular"
+            android:text="June 21, 2021"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@+id/phoneNumber"
+            app:layout_constraintTop_toBottomOf="@+id/phoneNumber" />
+
+        <TextView
+            android:id="@+id/transEarning"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:fontFamily="@font/opensans_semibold"
+            android:text="+ GHS 0.5"
+            android:textColor="#008E28"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/transactionAmount"
+            app:layout_constraintStart_toEndOf="@+id/transDateTime"
+            app:layout_constraintTop_toTopOf="@+id/transDateTime"
+            app:layout_constraintBottom_toBottomOf="@+id/transDateTime"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
